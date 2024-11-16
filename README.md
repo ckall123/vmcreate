@@ -16,14 +16,14 @@ C:\VirtualMachines
 
 `sudo vim /etc/netplan/50-cloud-init.yaml`
 
-cloud-init.yaml
+cloud-init.yaml **example**
 ```
 network:
   ethernets:
     enp0s3:
       dhcp4: no
         addresses:
-        -your ip
+        - 192.168.0.200/24  **your ip**
   renderer: networkd
   version:2
 ```
