@@ -1,13 +1,16 @@
 ﻿# vmcreate
 
-if #returned non-zero exit status 1. you can delete VM to this two folder.
+**if #returned non-zero exit status 1. you can delete VM to this two folder.**
+
 # windows
+VM folder
+
 C:\Users\user\VirtualBox VMs
 
 C:\VirtualMachines
 
 # linux
-## Change to your ip 
+## Change your ip 
 
 `ip a`
 
@@ -28,3 +31,7 @@ network:
 `sudo netplan apply`
 
 `sudo reboot`
+
+## Use Hadoop
+[Reference website](https://sparkbyexamples.com/hadoop/apache-hadoop-installation/)
+[Reference url](https://www.youtube.com/watch?v=hRtInGQhBxs&list=PLJlKGwy-7Ac6ASmzZPjonzYsV4vPELf0x)
