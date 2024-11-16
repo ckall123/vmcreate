@@ -107,10 +107,13 @@ vim hdfs-site.xml
 ```
 
 ```
+
 cd ~
+
 mkdir -p /hdfs/datanode
 
 mkdir -p /hdfs/namenode
+
 ```
 
 #### A
