@@ -10,6 +10,7 @@ C:\VirtualMachines
 ## Change to your ip 
 
 `ip a`
+
 `sudo vim /etc/netplan/50-cloud-init.yaml`
 
 ```
@@ -22,5 +23,7 @@ network:
   renderer: networkd
   version:2
 ```
+
 `sudo netplan apply`
+
 `sudo reboot`
