@@ -79,6 +79,7 @@ network:
 
 `vim hdfs-site.xml`
 
+**hdfs-site.xml**
 ```
 <configuration>
     <property>
