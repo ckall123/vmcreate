@@ -51,9 +51,11 @@ cd hadoop-3.4.1
 ## configure Hadoop
 
 ### install JAVA
-`sudo apt install openjdk-11-jre-headless`
+```
+sudo apt install openjdk-11-jre-headless
 
-`java --version`
+java --version
+```
 
 ### install ssh
 ```
