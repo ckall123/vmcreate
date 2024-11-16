@@ -32,7 +32,7 @@ network:
 
 `sudo reboot`
 
-## Use Hadoop
+## download Hadoop
 [Hadoop URL](https://hadoop.apache.org/)
 
 **Click Download**
@@ -40,8 +40,13 @@ network:
 **Binary download ->** [binary](https://www.apache.org/dyn/closer.cgi/hadoop/common/hadoop-3.4.1/hadoop-3.4.1.tar.gz)
 
 `wget https://dlcdn.apache.org/hadoop/common/hadoop-3.4.1/hadoop-3.4.1.tar.gz`
+`tar -xzf hadoop-3.4.1.tar.gz`
+`rm hadoop-3.4.1.tar.gz`
+`cd hadoop-3.4.1.tar.gz`
 
-## How to do Hadoop
+## use Hadoop
+
+### How to do use --Reference
 
 [Reference website](https://sparkbyexamples.com/hadoop/apache-hadoop-installation/)
 
