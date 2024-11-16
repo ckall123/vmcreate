@@ -1,12 +1,12 @@
 ﻿# vmcreate
 
-if #returned non-zero exit status 1. you can delete VM to this two folder.
-
+## if #returned non-zero exit status 1. you can delete VM to this two folder.
+### windows
 C:\Users\user\VirtualBox VMs
 
 C:\VirtualMachines
 
-## If you are in linux
+### linux
 
 
 # How to change your ip 
