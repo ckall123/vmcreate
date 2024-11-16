@@ -47,7 +47,7 @@ network:
 
 `cd hadoop-3.4.1`  
 
-## confugure Hadoop
+## configure Hadoop
 
 ### install JAVA
 `sudo apt install openjdk-11-jre-headless`
@@ -67,9 +67,37 @@ network:
 
 **PREASS** `CTRL + D`
 
+### Editing Hadoop's config files
+
+`cd hadoop-3.4.1/etc/hadoop/`
+
+`ls`
+
+#### Edit the core site xml file
+
+##### hdfs-site.xml
+
+`vim hdfs-site.xml`
+
+```
+<configuration>
+    <property>
+        <name>dfs.replication</name>
+        <value>3</value>  
+    </property>
+    <property>
+        <name>dfs.namenode.name.dir</name>
+        <value>/home/hadoop/hdfs/namenode</value>
+    </property>
+    <property>
+        <name>dfs.datanode.data.dir</name>
+        <value>/home/hadoop/hdfs/datanode</value>
+    </property>
+</configuration>
+```
 
 
-### A
+#### A
 `./start-dfs.sh`
 ## use Hadoop
 
