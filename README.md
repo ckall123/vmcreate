@@ -112,10 +112,30 @@ cd ~
 mkdir -p /hdfs/datanode
 
 mkdir -p /hdfs/namenode
+
+ls
+
+ls hdfs/
 ```
 
-#### A
-`./start-dfs.sh`
+[15:48](https://www.youtube.com/watch?v=EJj_0o-EY50&list=PLJlKGwy-7Ac6ASmzZPjonzYsV4vPELf0x&index=3&ab_channel=JoshuaHruzik)
+```
+cd hadoop-3.4.1/etc/hadoop/
+
+ls /usr/lib/jvm/java-11-openjdk-amd64
+
+ls
+
+vim hadoop-env.sh
+```
+
+**hadoop-env.sh**
+
+*find*  `export JAVA_HOME=`
+```
+
+```
+
 ## use Hadoop
 
 ### How to do use --Reference
