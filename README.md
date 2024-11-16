@@ -1,15 +1,13 @@
 ﻿# vmcreate
 
-## if #returned non-zero exit status 1. you can delete VM to this two folder.
-### windows
+if #returned non-zero exit status 1. you can delete VM to this two folder.
+# windows
 C:\Users\user\VirtualBox VMs
 
 C:\VirtualMachines
 
-### linux
-
-
-# How to change your ip 
+# linux
+## Change to your ip 
 
 ip a
 sudo vim /etc/netplan/50-cloud-init.yaml
