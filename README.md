@@ -75,8 +75,6 @@ network:
 
 ### Edit the core site xml file
 
-**hdfs-site.xml**
-
 `vim hdfs-site.xml`
 
 **hdfs-site.xml**
@@ -96,6 +94,12 @@ network:
     </property>
 </configuration>
 ```
+
+`cd ~`
+`mkdir -p /hdfs/datanode`
+`mkdir -p /hdfs/namenode`
+---
+
 
 
 #### A
