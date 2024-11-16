@@ -12,9 +12,10 @@ C:\VirtualMachines
 # linux
 ## Change your ip 
 
-`ip a`
-
-`sudo vim /etc/netplan/50-cloud-init.yaml`
+```
+ip a
+sudo vim /etc/netplan/50-cloud-init.yaml
+```
 
 cloud-init.yaml **example**
 ```
