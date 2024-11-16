@@ -10,7 +10,7 @@ C:\VirtualMachines
 ## Change to your ip 
 
 ip a
-(sudo vim /etc/netplan/50-cloud-init.yaml)
+'sudo vim /etc/netplan/50-cloud-init.yaml'
 network:
   ethernets:
     enp0s3:
