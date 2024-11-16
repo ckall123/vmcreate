@@ -13,6 +13,7 @@ C:\VirtualMachines
 
 `sudo vim /etc/netplan/50-cloud-init.yaml`
 
+cloud-init.yaml
 ```
 network:
   ethernets:
