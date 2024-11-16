@@ -67,15 +67,15 @@ network:
 
 **PREASS** `CTRL + D`
 
-### Editing Hadoop's config files
+## Editing Hadoop's config files
 
 `cd hadoop-3.4.1/etc/hadoop/`
 
 `ls`
 
-#### Edit the core site xml file
+### Edit the core site xml file
 
-##### hdfs-site.xml
+#### hdfs-site.xml
 
 `vim hdfs-site.xml`
 
