@@ -119,6 +119,9 @@ ls hdfs/
 ```
 
 [15:48](https://www.youtube.com/watch?v=EJj_0o-EY50&list=PLJlKGwy-7Ac6ASmzZPjonzYsV4vPELf0x&index=3&ab_channel=JoshuaHruzik)
+
+***find your java address***
+
 ```
 cd hadoop-3.4.1/etc/hadoop/
 
@@ -131,9 +134,9 @@ vim hadoop-env.sh
 
 **hadoop-env.sh**
 
-*find*  `export JAVA_HOME=`
+***find***  `#export JAVA_HOME=`
 ```
-
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 ```
 
 ## use Hadoop
