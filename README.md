@@ -139,6 +139,25 @@ vim hadoop-env.sh
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 ```
 
+```
+cd ~/hadoop-3.4.1/
+
+cd bin/
+
+ls
+
+./hdfs namenode -format
+
+cd ..
+
+ls
+
+./start-dfs.sh
+```
+
+***Open browser***
+*type*  `localhost:9870`
+
 ## use Hadoop
 
 ### How to do use --Reference
