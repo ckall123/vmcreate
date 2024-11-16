@@ -45,8 +45,31 @@ network:
 
 `rm hadoop-3.4.1.tar.gz`
 
-`cd hadoop-3.4.1.tar.gz`
+`cd hadoop-3.4.1`  
 
+## confugure Hadoop
+
+### install JAVA
+`sudo apt install openjdk-11-jre-headless`
+
+`java --version`
+
+### install ssh
+`sudo apt install openssh-server`
+
+`ssh user_name@localhost`
+
+`ssh-keygen -t rsa`
+
+`cat .ssh/id_rsa.pub >> .ssh/authorized_keys`
+
+`ssh user_name@localhost`
+
+**PREASS** `CTRL + D`
+
+
+
+### A
 `./start-dfs.sh`
 ## use Hadoop
 
