@@ -14,6 +14,7 @@ C:\VirtualMachines
 
 ```
 ip a
+
 sudo vim /etc/netplan/50-cloud-init.yaml
 ```
 
@@ -31,6 +32,7 @@ network:
 
 ```
 sudo netplan apply
+
 sudo reboot
 ```
 
@@ -42,9 +44,12 @@ sudo reboot
 **Binary download ->** [binary](https://www.apache.org/dyn/closer.cgi/hadoop/common/hadoop-3.4.1/hadoop-3.4.1.tar.gz)
 
 ```
-wget https://dlcdn.apache.org/hadoop/common/hadoop-3.4.1/hadoop-3.4.1.tar.gz`
+wget https://dlcdn.apache.org/hadoop/common/hadoop-3.4.1/hadoop-3.4.1.tar.gz
+
 tar -xzf hadoop-3.4.1.tar.gz
+
 rm hadoop-3.4.1.tar.gz
+
 cd hadoop-3.4.1
 ```
 
@@ -60,9 +65,13 @@ java --version
 ### install ssh
 ```
 sudo apt install openssh-server
+
 ssh user_name@localhost
+
 ssh-keygen -t rsa
+
 cat .ssh/id_rsa.pub >> .ssh/authorized_keys
+
 ssh user_name@localhost
 ```
 
@@ -73,8 +82,11 @@ ssh user_name@localhost
 **Edit the core site xml file**
 ```
 cd hadoop-3.4.1/etc/hadoop/
+
 ls
+
 vim hdfs-site.xml
+
 ```
 
 **hdfs-site.xml**
@@ -97,14 +109,12 @@ vim hdfs-site.xml
 
 ```
 cd ~
+
 mkdir -p /hdfs/datanode
+
 mkdir -p /hdfs/namenode
+
 ```
-
-___
-
-
-
 
 #### A
 `./start-dfs.sh`
