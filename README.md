@@ -65,7 +65,7 @@ network:
 
 `ssh user_name@localhost`
 
-** PREASS ** `CTRL + D`
+ **PREASS** `CTRL + D`
 
 ## Editing Hadoop's config files
 
@@ -75,7 +75,7 @@ network:
 
 ### Edit the core site xml file
 
-** hdfs-site.xml **
+**hdfs-site.xml**
 
 `vim hdfs-site.xml`
 
