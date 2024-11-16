@@ -86,7 +86,6 @@ cd hadoop-3.4.1/etc/hadoop/
 ls
 
 vim hdfs-site.xml
-
 ```
 
 **hdfs-site.xml**
@@ -109,11 +108,9 @@ vim hdfs-site.xml
 
 ```
 cd ~
-
 mkdir -p /hdfs/datanode
 
 mkdir -p /hdfs/namenode
-
 ```
 
 #### A
