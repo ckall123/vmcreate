@@ -23,7 +23,7 @@ network:
     enp0s3:
       dhcp4: no
         addresses:
-        - 192.168.0.200/24  **your ip**
+        - 192.168.0.200/24  # your ip
   renderer: networkd
   version:2
 ```
