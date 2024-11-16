@@ -28,9 +28,10 @@ network:
   version:2
 ```
 
-`sudo netplan apply`
-
-`sudo reboot`
+```
+sudo netplan apply
+sudo reboot
+```
 
 ## download Hadoop
 [Hadoop URL](https://hadoop.apache.org/)
@@ -39,13 +40,12 @@ network:
 
 **Binary download ->** [binary](https://www.apache.org/dyn/closer.cgi/hadoop/common/hadoop-3.4.1/hadoop-3.4.1.tar.gz)
 
-`wget https://dlcdn.apache.org/hadoop/common/hadoop-3.4.1/hadoop-3.4.1.tar.gz`
-
-`tar -xzf hadoop-3.4.1.tar.gz`
-
-`rm hadoop-3.4.1.tar.gz`
-
-`cd hadoop-3.4.1`  
+```
+wget https://dlcdn.apache.org/hadoop/common/hadoop-3.4.1/hadoop-3.4.1.tar.gz`
+tar -xzf hadoop-3.4.1.tar.gz
+rm hadoop-3.4.1.tar.gz
+cd hadoop-3.4.1
+```
 
 ## configure Hadoop
 
@@ -55,27 +55,24 @@ network:
 `java --version`
 
 ### install ssh
-`sudo apt install openssh-server`
-
-`ssh user_name@localhost`
-
-`ssh-keygen -t rsa`
-
-`cat .ssh/id_rsa.pub >> .ssh/authorized_keys`
-
-`ssh user_name@localhost`
+```
+sudo apt install openssh-server
+ssh user_name@localhost
+ssh-keygen -t rsa
+cat .ssh/id_rsa.pub >> .ssh/authorized_keys
+ssh user_name@localhost
+```
 
  **PREASS** `CTRL + D`
 
 ## Editing Hadoop's config files
 
-`cd hadoop-3.4.1/etc/hadoop/`
-
-`ls`
-
-### Edit the core site xml file
-
-`vim hdfs-site.xml`
+**Edit the core site xml file**
+```
+cd hadoop-3.4.1/etc/hadoop/
+ls
+vim hdfs-site.xml
+```
 
 **hdfs-site.xml**
 ```
@@ -95,10 +92,14 @@ network:
 </configuration>
 ```
 
-`cd ~`
-`mkdir -p /hdfs/datanode`
-`mkdir -p /hdfs/namenode`
----
+```
+cd ~
+mkdir -p /hdfs/datanode
+mkdir -p /hdfs/namenode
+```
+
+___
+
 
 
 
