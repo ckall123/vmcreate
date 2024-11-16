@@ -147,7 +147,9 @@ cd bin/
 ls
 
 ./hdfs namenode -format
+```
 
+```
 cd ..
 
 ls
@@ -157,6 +159,10 @@ ls
 
 ***Open browser***
 *type*  `localhost:9870`
+
+```
+./stop-all.sh
+```
 
 ## use Hadoop
 
