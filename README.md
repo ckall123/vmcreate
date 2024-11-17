@@ -95,9 +95,19 @@ ssh user_name@localhost
 cd hadoop-3.4.1/etc/hadoop/
 
 ls
-
-vim hdfs-site.xml
 ```
+`vim core-site.xml`
+```
+<configuration>
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://localhost:9000</value>
+    </property>
+</configuration>
+```
+
+
+`vim hdfs-site.xml`
 
 **hdfs-site.xml**
 ```
