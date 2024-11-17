@@ -69,7 +69,9 @@ sudo apt install openssh-server
 ssh user_name@localhost
 
 ssh-keygen -t rsa
-
+```
+press `Enter` third
+```
 cat .ssh/id_rsa.pub >> .ssh/authorized_keys
 
 ssh user_name@localhost
