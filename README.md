@@ -99,11 +99,11 @@ vim hdfs-site.xml
     </property>
     <property>
         <name>dfs.namenode.name.dir</name>
-        <value>/home/hadoop/hdfs/namenode</value>
+        <value>/home/hadoop-3.4.1/hdfs/namenode</value>
     </property>
     <property>
         <name>dfs.datanode.data.dir</name>
-        <value>/home/hadoop/hdfs/datanode</value>
+        <value>/home/hadoop-3.4.1/hdfs/datanode</value>
     </property>
 </configuration>
 ```
