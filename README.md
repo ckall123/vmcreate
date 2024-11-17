@@ -157,7 +157,7 @@ vim hadoop-env.sh
 
 **hadoop-env.sh**
 
-***find***  `# export JAVA_HOME=`
+***type*** `/` ***to find***  `# export JAVA_HOME=`
 ```
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 ```
