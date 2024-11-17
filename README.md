@@ -40,7 +40,9 @@ sudo reboot
 `sudo adduser hadoop`
 
 -set password 
+
 -press enter
+
 -enter
 
 su - hadoop
