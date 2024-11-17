@@ -35,6 +35,15 @@ sudo netplan apply
 
 sudo reboot
 ```
+## adduser 
+
+`sudo adduser hadoop`
+
+-set password 
+-press enter
+-enter
+
+su - hadoop
 
 ## download Hadoop
 [Hadoop URL](https://hadoop.apache.org/)
