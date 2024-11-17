@@ -96,7 +96,9 @@ cd hadoop-3.4.1/etc/hadoop/
 
 ls
 ```
+
 `vim core-site.xml`
+
 ```
 <configuration>
     <property>
@@ -106,10 +108,8 @@ ls
 </configuration>
 ```
 
-
 `vim hdfs-site.xml`
 
-**hdfs-site.xml**
 ```
 <configuration>
     <property>
