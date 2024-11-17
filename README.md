@@ -111,9 +111,9 @@ vim hdfs-site.xml
 ```
 cd ~
 
-mkdir -p /hdfs/datanode
+mkdir -p hdfs/datanode
 
-mkdir -p /hdfs/namenode
+mkdir -p hdfs/namenode
 
 ls
 
