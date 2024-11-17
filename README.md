@@ -10,7 +10,7 @@ C:\Users\user\VirtualBox VMs
 C:\VirtualMachines
 
 # linux
-## Change your ip 
+## Change your ip -chose
 
 ```
 ip a
@@ -35,7 +35,7 @@ sudo netplan apply
 
 sudo reboot
 ```
-## adduser 
+## adduser - chose 
 
 `sudo adduser hadoop`
 
