@@ -154,6 +154,8 @@ ls
 ```
 cd ..
 
+cd sbin/
+
 ls
 
 ./start-dfs.sh
