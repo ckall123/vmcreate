@@ -110,7 +110,7 @@ ls
 
 `vim hdfs-site.xml`
 
-if you are in hadoop user you need to change <value>/home/hadoop/hdfs/datanode</value>
+if you are in hadoop user you need to change `<value>/home/hadoop/hdfs/datanode</value>`
 
 ```
 <configuration>
