@@ -1,4 +1,4 @@
-﻿# vmcreate
+c﻿# vmcreate
 
 **if #returned non-zero exit status 1. you can delete VM to this two folder.**
 
@@ -199,6 +199,8 @@ ls
 `sudo apt install openjdk-11-jre-headless`
 
 #### Set up a passwordless SSH login
+
+`cd`
 
 `ssh-keygen -t rsa`
 
