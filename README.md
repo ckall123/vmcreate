@@ -190,8 +190,21 @@ ls
 ```
 ### scp to other vms
 
-scp -r /home/vm/hadoop-3.4.1/ hostname@server_ip:"/path/to/remote directory"
+`scp -r /home/vm/hadoop-3.4.1/ hostname@server_ip:"/path/to/remote directory"`
 
+`sudo apt install openjdk-11-jre-headless`
+
+```
+cd /home/your_user_name/hadoop-3.4.1/bin`
+
+./hdfs namenode -format
+
+cd ..
+
+cd sbin/
+
+./start-dfs.sh
+```
 
 [video 4](https://www.youtube.com/watch?v=zdrZTZbWAZc&list=PLJlKGwy-7Ac6ASmzZPjonzYsV4vPELf0x&index=4&ab_channel=JoshuaHruzik)
 
