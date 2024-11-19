@@ -188,6 +188,10 @@ ls
 ```
 ./stop-all.sh
 ```
+### scp to other vms
+
+scp -r /home/vm/hadoop-3.4.1/ hostname@server_ip:"/path/to/remote directory"
+
 
 [video 4](https://www.youtube.com/watch?v=zdrZTZbWAZc&list=PLJlKGwy-7Ac6ASmzZPjonzYsV4vPELf0x&index=4&ab_channel=JoshuaHruzik)
 
