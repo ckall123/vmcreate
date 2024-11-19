@@ -192,6 +192,8 @@ ls
 
 `scp -r /home/vm/hadoop-3.4.1/ hostname@server_ip:"/path/to/remote directory"`
 
+### start your Hadoop in other VM
+
 `sudo apt install openjdk-11-jre-headless`
 
 ```
