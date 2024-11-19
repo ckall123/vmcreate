@@ -195,7 +195,7 @@ ls
 `sudo apt install openjdk-11-jre-headless`
 
 ```
-cd /home/your_user_name/hadoop-3.4.1/bin`
+cd /home/your_user_name/hadoop-3.4.1/bin
 
 ./hdfs namenode -format
 
