@@ -194,13 +194,19 @@ ls
 
 ### start your Hadoop in other VM
 
+#### install java
+
+`sudo apt install openjdk-11-jre-headless`
+
+#### Set up a passwordless SSH login
+
 `ssh-keygen -t rsa`
 
 press `Enter` third
 
 `cat .ssh/id_rsa.pub >> .ssh/authorized_keys`
 
-`sudo apt install openjdk-11-jre-headless`
+#### start Hadoop
 
 ```
 cd /home/your_user_name/hadoop-3.4.1/bin
