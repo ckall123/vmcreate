@@ -196,11 +196,11 @@ ls
 
 `sudo apt install openjdk-11-jre-headless`
 
-ssh-keygen -t rsa
+`ssh-keygen -t rsa`
 
 press `Enter` third
 ```
-cat .ssh/id_rsa.pub >> .ssh/authorized_keys
+`cat .ssh/id_rsa.pub >> .ssh/authorized_keys`
 
 ```
 cd /home/your_user_name/hadoop-3.4.1/bin
