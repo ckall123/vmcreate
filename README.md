@@ -25,7 +25,8 @@ network:
     enp0s3:
       dhcp4: no
       addresses:
-        - 192.168.0.200/24  # your ip
+        gateway: 192.168.0.1
+        - 192.168.0.200/24  # your IP
   renderer: networkd
   version:2
 ```
