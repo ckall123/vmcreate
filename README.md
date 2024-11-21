@@ -223,6 +223,14 @@ cd sbin/
 ./start-dfs.sh
 ```
 
+```
+cd
+
+ls -lrt .ssh/
+
+cat .ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+
+```
 [video 4](https://www.youtube.com/watch?v=zdrZTZbWAZc&list=PLJlKGwy-7Ac6ASmzZPjonzYsV4vPELf0x&index=4&ab_channel=JoshuaHruzik)
 
 ## use Hadoop
