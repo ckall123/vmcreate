@@ -14,7 +14,7 @@ su - hadoop
 
 `sudo apt-get update`
 
-## 1.2 install openssh-server
+## 1.2 install openssh-server to All VMs
 
 `sudo apt install openssh-server`
 
@@ -51,7 +51,7 @@ scp .ssh/authorized_keys datanode2:/home/ubuntu/.ssh/authorized_keys
 scp .ssh/authorized_keys datanode3:/home/ubuntu/.ssh/authorized_keys
 ```
 
-## 1.5 Install JDK1.8 on all 4 nodes
+## 1.5 Install JDK1.8 on all VMs
 
 `sudo apt-get -y install openjdk-8-jdk-headless`
 
@@ -219,9 +219,20 @@ your_main_host
 192.168.1.118
 ```
 
-# 5 Format HDFS and Start Hadoop Cluster
+# 5 set your datanode
+## 5.1 scp hadoop folder to data node
 
-## 5.1 Format HDFS
+```
+scp -r /home/vm/hadoop/ datanode1:"/path/to/remote directory"
+scp -r /home/vm/hadoop/ datanode2:"/path/to/remote directory"
+```
+
+**------------------------------------------------------------------------------**
+
+
+# 6 Format HDFS and Start Hadoop Cluster
+
+## 6.1 Format HDFS
 
 HDFS needs to be formatted like any classical file system. On Name Node server (namenode), run the following command:
 
@@ -229,7 +240,7 @@ HDFS needs to be formatted like any classical file system. On Name Node server (
 hdfs namenode -format
 ```
 
-## 5.2 Start HDFS Cluster
+## 6.2 Start HDFS Cluster
 
 Start the HDFS by running the start-dfs.sh script from Name Node Server (namenode)
 
@@ -257,54 +268,6 @@ ubuntu@datanode1:~$ jps
 11242 DataNode
 ```
 
-***Open browser***
-*type*  `your_main_host:9870`
-
-```
-./stop-all.sh
-```
-
-
-# scp your hadoop to other vms
-
-`scp -r /home/vm/hadoop-3.4.1/ hostname@server_ip:"/path/to/remote directory"`
-
-### start your Hadoop in other VM
-
-#### install java
-
-
-
-#### Set up a passwordless SSH login
-
-`cd`
-
-`ssh-keygen -t rsa`
-
-press `Enter` third
-
-`cat .ssh/id_rsa.pub >> .ssh/authorized_keys`
-
-#### start Hadoop
-
-```
-cd /home/your_user_name/hadoop-3.4.1/bin
-
-./hdfs namenode -format
-
-cd ..
-
-cd sbin/
-
-./start-dfs.sh
-```
-
-```
-cd
-scp .ssh/authorized_keys datanode1:/home/vm/.ssh/authorized_keys
-
-
-```
 [video 4](https://www.youtube.com/watch?v=zdrZTZbWAZc&list=PLJlKGwy-7Ac6ASmzZPjonzYsV4vPELf0x&index=4&ab_channel=JoshuaHruzik)
 
 ## use Hadoop
