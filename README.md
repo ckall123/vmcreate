@@ -1,42 +1,6 @@
-c﻿# vmcreate
+# 1. Apache Hadoop Installation – Preparation
 
-**if #returned non-zero exit status 1. you can delete VM to this two folder.**
-
-# windows
-VM folder
-
-C:\Users\user\VirtualBox VMs
-
-C:\VirtualMachines
-
-# linux
-## Change your ip -chose
-
-```
-ip a
-
-sudo vim /etc/netplan/50-cloud-init.yaml
-```
-
-cloud-init.yaml **example**
-```
-network:
-  ethernets:
-    enp0s3:
-      dhcp4: no
-      addresses:
-        gateway: 192.168.0.1
-        - 192.168.0.200/24  # your IP
-  renderer: networkd
-  version:2
-```
-
-```
-sudo netplan apply
-
-sudo reboot
-```
-## adduser - chose 
+## adduser - ** chose **
 
 `sudo adduser hadoop`
 
@@ -46,7 +10,57 @@ sudo reboot
 
 su - hadoop
 
-## download Hadoop
+## 1.1 Update the Source List of Ubuntu
+
+`sudo apt-get update`
+
+## 1.2 install openssh-server
+
+`sudo apt install openssh-server`
+
+You can ssh to your VM.
+
+If you want to connect to other virtual machines via SSH, your virtual machine also needs to have SSH installed.
+
+`ssh user_name@localhost`
+
+## 1.3 Add all our nodes to /etc/hosts.
+
+**namenode** is your master control, datanode(host name, domain) is your VMs
+
+```
+sudo vi /etc/hosts
+192.168.1.100 namenode.socal.rr.com
+
+192.168.1.141 datanode1
+192.168.1.113 VM123
+192.168.1.118 datanode3.socal.rr.com
+```
+
+## 1.4 Setup Passwordless login Between Name Node and all Data Nodes.
+
+```
+ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
+cat .ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+```
+Now copy authorized_keys to all data nodes in a cluster. This enables name node to connect to data nodes password less (without prompting for password)
+
+```
+scp .ssh/authorized_keys datanode1:/home/ubuntu/.ssh/authorized_keys
+scp .ssh/authorized_keys datanode2:/home/ubuntu/.ssh/authorized_keys
+scp .ssh/authorized_keys datanode3:/home/ubuntu/.ssh/authorized_keys
+```
+
+## 1.5 Install JDK1.8 on all 4 nodes
+
+`sudo apt-get -y install openjdk-8-jdk-headless`
+
+`java --version`
+
+# 2 Download and Install Apache Hadoop
+
+## Hadoop Installation
+
 [Hadoop URL](https://hadoop.apache.org/)
 
 **Click Download**
@@ -55,77 +69,72 @@ su - hadoop
 
 ```
 wget https://dlcdn.apache.org/hadoop/common/hadoop-3.4.1/hadoop-3.4.1.tar.gz
-
 tar -xzf hadoop-3.4.1.tar.gz
-
+mv hadoop-3.4.1 hadoop
 rm hadoop-3.4.1.tar.gz
-
-cd hadoop-3.4.1
 ```
 
-## configure Hadoop
+## 2.2 Apache Hadoop configuration – Setup environment variables.
 
-### install JAVA
 ```
-sudo apt install openjdk-11-jre-headless
-
-java --version
-```
-
-### install ssh
-```
-sudo apt install openssh-server
-
-ssh user_name@localhost
-
-ssh-keygen -t rsa
-```
-press `Enter` third
-```
-cat .ssh/id_rsa.pub >> .ssh/authorized_keys
-
-ssh user_name@localhost
+vi ~/.bashrc
+export HADOOP_HOME=/home/vm/hadoop
+export PATH=$PATH:$HADOOP_HOME/bin
+export PATH=$PATH:$HADOOP_HOME/sbin
+export HADOOP_MAPRED_HOME=${HADOOP_HOME}
+export HADOOP_COMMON_HOME=${HADOOP_HOME}
+export HADOOP_HDFS_HOME=${HADOOP_HOME}
+export YARN_HOME=${HADOOP_HOME}
 ```
 
- **PREASS** `CTRL + D`
+`source ~/.bashrc`
 
 ## Editing Hadoop's config files
 
+***find your java address***
+
+```
+ls /usr/lib/jvm/java-8-openjdk-amd64
+vi ~/hadoop/etc/hadoop/hadoop-env.sh
+```
+
+**hadoop-env.sh**
+
+***type*** `/` ***to find***  `# export JAVA_HOME=`
+```
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+```
+
 **Edit the core site xml file**
-```
-cd hadoop-3.4.1/etc/hadoop/
 
-ls
-```
-
-`vim core-site.xml`
+`vi ~/hadoop/etc/hadoop/core-site.xml`
 
 ```
 <configuration>
     <property>
         <name>fs.defaultFS</name>
-        <value>hdfs://localhost:9000</value>
+        <value>hdfs://your_main_host:9000</value>
     </property>
 </configuration>
 ```
 
 `vim hdfs-site.xml`
 
-if you are in hadoop user you need to change `<value>/home/your_user_name/hdfs/datanode</value>`
+if you are in hadoop user you need to change `<value>/home/your_user_name/hadoop/hdfs/datanode</value>`
 
 ```
 <configuration>
     <property>
         <name>dfs.replication</name>
-        <value>3</value>  
+        <value>1</value>  
     </property>
     <property>
         <name>dfs.namenode.name.dir</name>
-        <value>/home/hdfs/namenode</value>
+        <value>/home/hadoop/hdfs/namenode</value>
     </property>
     <property>
         <name>dfs.datanode.data.dir</name>
-        <value>/home/vm/hdfs/datanode</value>
+        <value>/home/vm/hadoop/hdfs/datanode</value>
     </property>
 </configuration>
 ```
@@ -146,24 +155,7 @@ ls hdfs/
 
 [15:48](https://www.youtube.com/watch?v=EJj_0o-EY50&list=PLJlKGwy-7Ac6ASmzZPjonzYsV4vPELf0x&index=3&ab_channel=JoshuaHruzik)
 
-***find your java address***
 
-```
-cd hadoop-3.4.1/etc/hadoop/
-
-ls /usr/lib/jvm/java-11-openjdk-amd64
-
-ls
-
-vim hadoop-env.sh
-```
-
-**hadoop-env.sh**
-
-***type*** `/` ***to find***  `# export JAVA_HOME=`
-```
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
-```
 
 ```
 cd ~/hadoop-3.4.1/
