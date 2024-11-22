@@ -123,7 +123,7 @@ chmod 755 /home/vm/hadoop/hdfs/namenode/
 
 `ls -l hadoop/hdfs/`
 
-## 3.3 Edit the core site xml file
+## 3.3 Edit the xml file
 
 ### 3.3.1 Update core-site.xml
 `vi ~/hadoop/etc/hadoop/core-site.xml`
