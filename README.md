@@ -93,15 +93,16 @@ export YARN_HOME=${HADOOP_HOME}
 
 ***find your java address***
 
-```
-ls /usr/lib/jvm/java-8-openjdk-amd64
-vi ~/hadoop/etc/hadoop/hadoop-env.sh
-```
+
+`ls /usr/lib/jvm/java-8-openjdk-amd64`
 
 **hadoop-env.sh**
 
+`vi ~/hadoop/etc/hadoop/hadoop-env.sh`
+
 ***type*** `/` ***to find***  `# export JAVA_HOME=`
 ```
+vi ~/hadoop/etc/hadoop/hadoop-env.sh
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 ```
 
@@ -139,25 +140,25 @@ if you are in hadoop user you need to change `<value>/home/your_user_name/hadoop
 </configuration>
 ```
 
-```
-cd ~
-
-mkdir -p hdfs/datanode
-chmod 755 /home/vm/hdfs/datanode/
-
-mkdir -p hdfs/namenode
-chmod 755 /home/vm/hdfs/namenode/
-
-ls
-
-ls hdfs/
-```
-
-[15:48](https://www.youtube.com/watch?v=EJj_0o-EY50&list=PLJlKGwy-7Ac6ASmzZPjonzYsV4vPELf0x&index=3&ab_channel=JoshuaHruzik)
-
-
+`cd ~`
 
 ```
+mkdir -p hadoop/hdfs/datanode
+mkdir -p hadoop/hdfs/namenode
+```
+
+```
+chmod 755 /home/vm/hadoop/hdfs/datanode/
+chmod 755 /home/vm/hadoop/hdfs/namenode/
+```
+
+`ls -l hadoop/hdfs/`
+
+**--------------------------------------------------**
+
+```
+
+
 cd ~/hadoop-3.4.1/
 
 cd bin/
