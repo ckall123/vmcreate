@@ -151,7 +151,7 @@ if you are in hadoop user you need to change `<value>/home/your_user_name/hadoop
     </property>
     <property>
         <name>dfs.namenode.name.dir</name>
-        <value>/home/hadoop/hdfs/namenode</value>
+        <value>/home/vm/hadoop/hdfs/namenode</value>
     </property>
     <property>
         <name>dfs.datanode.data.dir</name>
