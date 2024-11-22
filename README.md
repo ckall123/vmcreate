@@ -89,10 +89,11 @@ export YARN_HOME=${HADOOP_HOME}
 
 `source ~/.bashrc`
 
-## Editing Hadoop's config files
+## 3. Configure Apache Hadoop Cluster
+
+## 3.1 Update hadoop-env.sh
 
 ***find your java address***
-
 
 `ls /usr/lib/jvm/java-8-openjdk-amd64`
 
@@ -106,8 +107,25 @@ vi ~/hadoop/etc/hadoop/hadoop-env.sh
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 ```
 
-**Edit the core site xml file**
+## 3.2 Create data folder
 
+`cd ~`
+
+```
+mkdir -p hadoop/hdfs/datanode
+mkdir -p hadoop/hdfs/namenode
+```
+
+```
+chmod 755 /home/vm/hadoop/hdfs/datanode/
+chmod 755 /home/vm/hadoop/hdfs/namenode/
+```
+
+`ls -l hadoop/hdfs/`
+
+## 3.3 Edit the core site xml file
+
+### 3.3.1 Update core-site.xml
 `vi ~/hadoop/etc/hadoop/core-site.xml`
 
 ```
@@ -119,7 +137,9 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 </configuration>
 ```
 
-`vim hdfs-site.xml`
+### 3.3.2 Update hdfs-site.xml
+
+`vi ~/hadoop/etc/hadoop/hdfs-site.xml`
 
 if you are in hadoop user you need to change `<value>/home/your_user_name/hadoop/hdfs/datanode</value>`
 
@@ -140,51 +160,112 @@ if you are in hadoop user you need to change `<value>/home/your_user_name/hadoop
 </configuration>
 ```
 
-`cd ~`
+### 3.3.3 Update yarn-site.xml
+
+`vi ~/hadoop/etc/hadoop/`
 
 ```
-mkdir -p hadoop/hdfs/datanode
-mkdir -p hadoop/hdfs/namenode
+<configuration>
+    <property>
+        <name>yarn.nodemanager.aux-services</name>
+        <value>mapreduce_shuffle</value>
+    </property>
+    <property>
+        <name>yarn.nodemanager.aux-services.mapreduce.shuffle.class</name>
+        <value>org.apache.hadoop.mapred.ShuffleHandler</value>
+    </property>
+    <property>
+       <name>yarn.resourcemanager.hostname</name>
+       <value>your_main_host</value>
+    </property>
+</configuration>
 ```
 
-```
-chmod 755 /home/vm/hadoop/hdfs/datanode/
-chmod 755 /home/vm/hadoop/hdfs/namenode/
-```
+### 3.3.4 Update mapred-site.xml 
 
-`ls -l hadoop/hdfs/`
-
-**--------------------------------------------------**
+`vi ~/hadoop/etc/hadoop/mapred-site.xml`
 
 ```
-
-
-cd ~/hadoop-3.4.1/
-
-cd bin/
-
-ls
-
-./hdfs namenode -format
+<configuration>
+    <property>
+        <name>mapreduce.jobtracker.address</name>
+        <value>your_main_host:54311</value>
+    </property>
+    <property>
+        <name>mapreduce.framework.name</name>
+        <value>yarn</value>
+    </property>
+</configuration>
 ```
 
+# 4. Create master and workers files
+
+## 4.1 Create master file and add your name node IP.
+
+`vi ~/hadoop/etc/hadoop/masters`
+
+
 ```
-cd ..
+your_main_host
+```
 
-cd sbin/
+## 4.2 Create workers file and add your data node IP.
 
-ls
+`vi ~/hadoop/etc/hadoop/workers`
 
-./start-dfs.sh
+```
+192.168.1.141
+192.168.1.113
+192.168.1.118
+```
+
+# 5 Format HDFS and Start Hadoop Cluster
+
+## 5.1 Format HDFS
+
+HDFS needs to be formatted like any classical file system. On Name Node server (namenode), run the following command:
+
+```
+hdfs namenode -format
+```
+
+## 5.2 Start HDFS Cluster
+
+Start the HDFS by running the start-dfs.sh script from Name Node Server (namenode)
+
+```
+ubuntu@namenode:~$ start-dfs.sh
+Starting namenodes on [namenode.socal.rr.com]
+Starting datanodes
+Starting secondary namenodes [namenode]
+ubuntu@namenode:~$
+```
+
+Running jps command on namenode should list the following
+```
+ubuntu@namenode:~$ jps
+18978 SecondaryNameNode
+19092 Jps
+18686 NameNode
+```
+
+Running jps command on datanodes should list the following
+
+```
+ubuntu@datanode1:~$ jps
+14012 Jps
+11242 DataNode
 ```
 
 ***Open browser***
-*type*  `localhost:9870`
+*type*  `your_main_host:9870`
 
 ```
 ./stop-all.sh
 ```
-### scp to other vms
+
+
+# scp your hadoop to other vms
 
 `scp -r /home/vm/hadoop-3.4.1/ hostname@server_ip:"/path/to/remote directory"`
 
@@ -192,7 +273,7 @@ ls
 
 #### install java
 
-`sudo apt install openjdk-11-jre-headless`
+
 
 #### Set up a passwordless SSH login
 
