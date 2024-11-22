@@ -132,7 +132,7 @@ chmod 755 /home/vm/hadoop/hdfs/namenode/
 <configuration>
     <property>
         <name>fs.defaultFS</name>
-        <value>hdfs://your_main_host:9000</value>
+        <value>hdfs://your_namenode_ip:9000</value>
     </property>
 </configuration>
 ```
@@ -176,7 +176,7 @@ if you are in hadoop user you need to change `<value>/home/your_user_name/hadoop
     </property>
     <property>
        <name>yarn.resourcemanager.hostname</name>
-       <value>your_main_host</value>
+       <value>your_namenode_ip</value>
     </property>
 </configuration>
 ```
@@ -189,7 +189,7 @@ if you are in hadoop user you need to change `<value>/home/your_user_name/hadoop
 <configuration>
     <property>
         <name>mapreduce.jobtracker.address</name>
-        <value>your_main_host:54311</value>
+        <value>your_namenode_ip:54311</value>
     </property>
     <property>
         <name>mapreduce.framework.name</name>
@@ -206,7 +206,7 @@ if you are in hadoop user you need to change `<value>/home/your_user_name/hadoop
 
 
 ```
-your_main_host
+your_namenode_ip
 ```
 
 ## 4.2 Create workers file and add all your data node IP.
