@@ -134,8 +134,10 @@ if you are in hadoop user you need to change `<value>/home/your_user_name/hdfs/d
 cd ~
 
 mkdir -p hdfs/datanode
+chmod 755 /home/vm/hdfs/datanode/
 
 mkdir -p hdfs/namenode
+chmod 755 /home/vm/hdfs/namenode/
 
 ls
 
