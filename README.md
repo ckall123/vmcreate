@@ -141,7 +141,7 @@ chmod 755 /home/vm/hadoop/hdfs/namenode/
 
 `vi ~/hadoop/etc/hadoop/hdfs-site.xml`
 
-if you are in hadoop user you need to change `<value>/home/your_user_name/hadoop/hdfs/datanode</value>`
+if you are in hadoop user you need to change `<value>/home/vm/hadoop/hdfs/datanode</value>`
 
 ```
 <configuration>
