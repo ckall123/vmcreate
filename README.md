@@ -1,3 +1,11 @@
+# In Ubuntu
+
+**Install Virturalbox**
+
+run `creat_vm_bridged.py`
+
+run `setting_birdged.py`
+
 # 1. Apache Hadoop Installation – Preparation
 
 ## adduser - ** chose **
