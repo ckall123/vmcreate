@@ -2,9 +2,9 @@
 
 ***Install Virturalbox***
 
-run `creat_vm_bridged.py`
+run `creat_vm_bridged.py` you need to change the path in the code
 
-run `setting_birdged.py`
+run `setting_birdged.py`  you need to change the path in the code
 
 # 1. Apache Hadoop Installation – Preparation
 
