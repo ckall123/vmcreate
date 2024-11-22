@@ -209,7 +209,7 @@ if you are in hadoop user you need to change `<value>/home/your_user_name/hadoop
 your_main_host
 ```
 
-## 4.2 Create workers file and add your data node IP.
+## 4.2 Create workers file and add all your data node IP.
 
 `vi ~/hadoop/etc/hadoop/workers`
 
