@@ -232,7 +232,7 @@ your_namenode_ip
 
 ```
 scp -r /home/vm/hadoop/ datanode1:"/path/to/remote directory"
-scp -r /home/vm/hadoop/ datanode2:"/path/to/remote directory"
+scp -r /home/vm/hadoop/ VM1:"/path/to/remote directory"
 ```
 
 **------------------------------------------------------------------------------**
