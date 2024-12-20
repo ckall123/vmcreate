@@ -38,11 +38,11 @@ If you want to connect to other virtual machines via SSH, your virtual machine a
 
 ```
 sudo vi /etc/hosts
-192.168.1.100 namenode.socal.rr.com
+192.168.0.100 namenode.socal.rr.com
 
-192.168.1.141 datanode1
-192.168.1.113 VM123
-192.168.1.118 datanode3.socal.rr.com
+192.168.0.101 datanode1
+192.168.0.102 datanode2
+192.168.0.103 VM1
 ```
 
 ## 1.4 Setup Passwordless login Between Name Node and all Data Nodes.
@@ -54,9 +54,9 @@ cat .ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 Now copy authorized_keys to all data nodes in a cluster. This enables name node to connect to data nodes password less (without prompting for password)
 
 ```
-scp .ssh/authorized_keys datanode1:/home/ubuntu/.ssh/authorized_keys
-scp .ssh/authorized_keys datanode2:/home/ubuntu/.ssh/authorized_keys
-scp .ssh/authorized_keys datanode3:/home/ubuntu/.ssh/authorized_keys
+scp .ssh/authorized_keys datanode1:/home/{urer_name}/.ssh/authorized_keys
+scp .ssh/authorized_keys datanode2:/home/vm/.ssh/authorized_keys
+scp .ssh/authorized_keys VM1:/home/vm/.ssh/authorized_keys
 ```
 
 ## 1.5 Install JDK1.8 on all VMs
