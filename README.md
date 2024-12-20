@@ -222,9 +222,9 @@ your_namenode_ip
 `vi ~/hadoop/etc/hadoop/workers`
 
 ```
-192.168.1.141
-192.168.1.113
-192.168.1.118
+192.168.0.101
+192.168.0.102
+192.168.0.103
 ```
 
 # 5 set your datanode
