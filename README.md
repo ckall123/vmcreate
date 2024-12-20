@@ -170,7 +170,7 @@ if you are in hadoop user you need to change `<value>/home/vm/hadoop/hdfs/datano
 
 ### 3.3.3 Update yarn-site.xml
 
-`vi ~/hadoop/etc/hadoop/`
+`vi ~/hadoop/etc/hadoop/yarn-site.xml`
 
 ```
 <configuration>
