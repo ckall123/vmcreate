@@ -43,6 +43,11 @@ sudo vi /etc/hosts
 192.168.0.101 datanode1
 192.168.0.102 datanode2
 192.168.0.103 VM1
+
+192.168.0.100 namenode
+192.168.0.101 vm1
+192.168.0.102 vm2
+192.168.0.103 vm3
 ```
 
 ## 1.4 Setup Passwordless login Between Name Node and all Data Nodes.
