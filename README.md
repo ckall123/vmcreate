@@ -66,7 +66,7 @@ scp .ssh/authorized_keys VM1:/home/vm/.ssh/authorized_keys
 
 ## 1.5 Install JDK1.8 on all VMs
 ```
-apt-get update
+sudo apt-get update
 
 sudo apt-get -y install openjdk-8-jdk-headless
 
